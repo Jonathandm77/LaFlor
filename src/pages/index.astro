@@ -1,6 +1,7 @@
 ---
 import '../styles/tailwind.css';
 import Navbar from '../components/Navbar.astro';
+import Presentacion from '../components/Presentacion.astro';
 ---
 
 <html lang="es">
@@ -10,12 +11,6 @@ import Navbar from '../components/Navbar.astro';
   </head>
   <body class="pt-16 bg-gray-100">
     <Navbar />
-
-    <main class="p-6">
-      <section id="inicio">
-        <h1 class="text-3xl font-bold text-blue-600">Bienvenido a Autoescuela La Flor</h1>
-        <p class="mt-2 text-gray-700">Tu camino hacia el carnet empieza aquí.</p>
-      </section>
-    </main>
+	<Presentacion />
   </body>
 </html>	

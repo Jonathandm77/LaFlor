@@ -8,6 +8,6 @@
   font-display: swap;
 }
 
-.font-diamond {
-  font-family: 'Diamond', sans-serif;
+@theme {
+  --font-diamond: 'Diamond', sans-serif;
 }

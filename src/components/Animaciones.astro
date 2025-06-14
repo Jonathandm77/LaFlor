@@ -6,22 +6,21 @@
   // Animar .aula-slide de izquierda a derecha
   gsap.utils.toArray('.aula-slide').forEach(elem => {
     gsap.from('.aula-slide', {
-      x: -100, // empieza desplazado a la izquierda
+      x: -100, 
       opacity: 0,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
         trigger: '.aula-slide',
-        start: "top 80%", // cuando el elemento llega a 80% de la ventana
+        start: "top 80%", 
         toggleActions: "play none none none",
       }
     });
   });
-
   // Animar .vehiculos-slide de derecha a izquierda
   gsap.utils.toArray('.vehiculos-slide').forEach(elem => {
     gsap.from('.vehiculos-slide', {
-      x: 100, // empieza desplazado a la derecha
+      x: 100, 
       opacity: 0,
       duration: 1,
       ease: "power2.out",

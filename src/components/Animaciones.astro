@@ -3,6 +3,21 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
+// Animar .escaparate-slide de derecha hacia izquierda
+  gsap.utils.toArray('.escaparate-slide').forEach(elem => {
+    gsap.from('.escaparate-slide', {
+      x: 100, 
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: '.escaparate-slide',
+        start: "top 80%",
+        toggleActions: "play none none none",
+      }
+    });
+  });
+
   // Animar .aula-slide de izquierda a derecha
   gsap.utils.toArray('.aula-slide').forEach(elem => {
     gsap.from('.aula-slide', {

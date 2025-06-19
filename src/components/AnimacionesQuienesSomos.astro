@@ -1,26 +1,63 @@
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
 
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    gsap.to(card, {
-      y: -10,
-      scale: 1.01,
-      boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
-      duration: 0.3
-    });
+const cards = document.querySelectorAll<HTMLElement>(".card");
+
+function onMouseEnter(event: MouseEvent) {
+  const card = event.currentTarget as HTMLElement;
+  gsap.to(card, {
+    y: -10,
+    scale: 1.03,
+    boxShadow: "0 12px 24px rgba(0, 0, 0, 0.2)",
+    duration: 0.3,
+    ease: "power2.out",
   });
+}
 
-  card.addEventListener('mouseleave', () => {
+function onMouseLeave(event: MouseEvent) {
+  const card = event.currentTarget as HTMLElement;
+  gsap.to(card, {
+    y: 0,
+    scale: 1,
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    duration: 0.3,
+    ease: "power2.inOut",
+  });
+}
+
+function activarAnimaciones() {
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", onMouseEnter);
+    card.addEventListener("mouseleave", onMouseLeave);
+  });
+}
+
+function desactivarAnimaciones() {
+  cards.forEach((card) => {
+    card.removeEventListener("mouseenter", onMouseEnter);
+    card.removeEventListener("mouseleave", onMouseLeave);
+    // Reset al estilo normal
     gsap.to(card, {
       y: 0,
       scale: 1,
-      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-      duration: 0.3
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      duration: 0.3,
+      ease: "power2.inOut",
     });
   });
+}
+
+function checkWidth() {
+  if (window.innerWidth >= 1024) {
+    activarAnimaciones();
+  } else {
+    desactivarAnimaciones();
+  }
+}
+
+window.addEventListener("resize", checkWidth);
+document.addEventListener("DOMContentLoaded", () => {
+  checkWidth();
 });
 
 </script>

@@ -1,42 +1,23 @@
 <script>
-import { gsap } from "gsap";
+  import { gsap } from "gsap";
+  import Swiper from "swiper";
+  import { Navigation } from "swiper/modules";
 
-const cards = document.querySelectorAll<HTMLElement>(".card");
+  const cards = document.querySelectorAll<HTMLElement>(".card");
 
-function onMouseEnter(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement;
-  gsap.to(card, {
-    y: -10,
-    scale: 1.03,
-    boxShadow: "0 12px 24px rgba(0, 0, 0, 0.2)",
-    duration: 0.3,
-    ease: "power2.out",
-  });
-}
+  function onMouseEnter(event: MouseEvent) {
+    const card = event.currentTarget as HTMLElement;
+    gsap.to(card, {
+      y: -10,
+      scale: 1.03,
+      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.2)",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  }
 
-function onMouseLeave(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement;
-  gsap.to(card, {
-    y: 0,
-    scale: 1,
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    duration: 0.3,
-    ease: "power2.inOut",
-  });
-}
-
-function activarAnimaciones() {
-  cards.forEach((card) => {
-    card.addEventListener("mouseenter", onMouseEnter);
-    card.addEventListener("mouseleave", onMouseLeave);
-  });
-}
-
-function desactivarAnimaciones() {
-  cards.forEach((card) => {
-    card.removeEventListener("mouseenter", onMouseEnter);
-    card.removeEventListener("mouseleave", onMouseLeave);
-    // Reset al estilo normal
+  function onMouseLeave(event: MouseEvent) {
+    const card = event.currentTarget as HTMLElement;
     gsap.to(card, {
       y: 0,
       scale: 1,
@@ -44,20 +25,50 @@ function desactivarAnimaciones() {
       duration: 0.3,
       ease: "power2.inOut",
     });
-  });
-}
-
-function checkWidth() {
-  if (window.innerWidth >= 1024) {
-    activarAnimaciones();
-  } else {
-    desactivarAnimaciones();
   }
-}
 
-window.addEventListener("resize", checkWidth);
-document.addEventListener("DOMContentLoaded", () => {
-  checkWidth();
-});
+  function activarAnimaciones() {
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", onMouseEnter);
+      card.addEventListener("mouseleave", onMouseLeave);
+    });
+  }
 
+  function desactivarAnimaciones() {
+    cards.forEach((card) => {
+      card.removeEventListener("mouseenter", onMouseEnter);
+      card.removeEventListener("mouseleave", onMouseLeave);
+      // Reset al estilo normal
+      gsap.to(card, {
+        y: 0,
+        scale: 1,
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+    });
+  }
+
+  function checkWidth() {
+    if (window.innerWidth >= 1024) {
+      activarAnimaciones();
+    } else {
+      desactivarAnimaciones();
+    }
+  }
+
+  window.addEventListener("resize", checkWidth);
+  document.addEventListener("DOMContentLoaded", () => {
+    checkWidth();
+  });
+
+  const swiper = new Swiper("#swiper-container", {
+    modules: [Navigation],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 </script>

@@ -1,0 +1,26 @@
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    gsap.to(card, {
+      y: -10,
+      scale: 1.01,
+      boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
+      duration: 0.3
+    });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {
+      y: 0,
+      scale: 1,
+      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+      duration: 0.3
+    });
+  });
+});
+
+</script>

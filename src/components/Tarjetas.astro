@@ -1,5 +1,6 @@
 ---
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 ---
 
@@ -7,13 +8,12 @@ import 'swiper/css/navigation';
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold text-gray-800 mb-10">¿Por qué elegirnos?</h2>
 
-    <!-- Carrusel en móvil -->
-    <div class="lg:hidden relative">
-      <div id="swiper-container" class="swiper w-full">
+    <!-- Carrusel en móviles -->
+    <div class="lg:hidden">
+      <div class="swiper w-full">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center">
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <i class="fa-solid fa-shield text-4xl mb-4"></i>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Conducción segura</h3>
               <p class="text-gray-600">Formamos conductores responsables y preparados para cualquier situación en la carretera.</p>
@@ -21,7 +21,7 @@ import 'swiper/css/navigation';
           </div>
 
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center">
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <div class="text-4xl mb-4">🚦</div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Educación vial</h3>
               <p class="text-gray-600">Aprende las normas de circulación de forma clara, rápida y estructurada con nosotros.</p>
@@ -29,7 +29,7 @@ import 'swiper/css/navigation';
           </div>
 
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center">
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <div class="text-4xl mb-4">📚</div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Material actualizado</h3>
               <p class="text-gray-600">Tests y recursos siempre al día para mejorar tu preparación y tus capacidades para aprobar.</p>
@@ -37,7 +37,7 @@ import 'swiper/css/navigation';
           </div>
 
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center">
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <div class="text-4xl mb-4">🧑‍🏫</div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Instructores expertos</h3>
               <p class="text-gray-600">Profesionales con amplia experiencia y vocación docente.</p>
@@ -45,7 +45,7 @@ import 'swiper/css/navigation';
           </div>
 
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center">
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <div class="text-4xl mb-4">🔧</div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Vehículos modernos</h3>
               <p class="text-gray-600">Aprende con los vehículos modernos y como controlar sus sistemas.</p>
@@ -53,54 +53,49 @@ import 'swiper/css/navigation';
           </div>
 
           <div class="swiper-slide">
-            <div class="bg-white shadow-md rounded-xl p-6 w-72 mx-auto flex flex-col items-center text-center"> 
+            <div class="bg-white shadow-md rounded-xl p-6 w-90 mx-auto flex flex-col items-center text-center">
               <div class="text-4xl mb-4">⏱️</div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Flexibilidad horaria</h3>
               <p class="text-gray-600">Nos adaptamos a tus horarios, tanto de mañana como de tarde.</p>
             </div>
           </div>
-
         </div>
-
-        <!-- Flechas de navegación -->
-        <div class="swiper-button-prev !text-gray-700"></div>
-        <div class="swiper-button-next !text-gray-700"></div>
       </div>
     </div>
 
-    <!-- Grid en escritorio -->
-    <div class="hidden lg:grid grid-cols-3 gap-6">
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+    <!-- Rejilla en escritorio -->
+    <div class="hidden lg:grid lg:grid-cols-3 gap-6">
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <i class="fa-solid fa-shield text-4xl mb-4"></i>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Conducción segura</h3>
         <p class="text-gray-600">Formamos conductores responsables y preparados para cualquier situación en la carretera.</p>
       </div>
 
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <div class="text-4xl mb-4">🚦</div>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Educación vial</h3>
         <p class="text-gray-600">Aprende las normas de circulación de forma clara, rápida y estructurada con nosotros.</p>
       </div>
 
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <div class="text-4xl mb-4">📚</div>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Material actualizado</h3>
         <p class="text-gray-600">Tests y recursos siempre al día para mejorar tu preparación y tus capacidades para aprobar.</p>
       </div>
 
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <div class="text-4xl mb-4">🧑‍🏫</div>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Instructores expertos</h3>
         <p class="text-gray-600">Profesionales con amplia experiencia y vocación docente.</p>
       </div>
 
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <div class="text-4xl mb-4">🔧</div>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Vehículos modernos</h3>
         <p class="text-gray-600">Aprende con los vehículos modernos y como controlar sus sistemas.</p>
       </div>
 
-      <div class="card bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center"> 
+      <div class="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
         <div class="text-4xl mb-4">⏱️</div>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Flexibilidad horaria</h3>
         <p class="text-gray-600">Nos adaptamos a tus horarios, tanto de mañana como de tarde.</p>
@@ -109,4 +104,23 @@ import 'swiper/css/navigation';
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.swiper', {
+    modules: [Autoplay],
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,  
+    },
+    speed: 1300,
+  });
+});
+</script>
 

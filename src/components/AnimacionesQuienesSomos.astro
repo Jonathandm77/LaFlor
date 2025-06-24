@@ -87,6 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
     opacity: 0,
     ease: "power3.out"
   });
+
+  gsap.from(".card-slide", {
+    scrollTrigger: {
+      trigger: ".card-slide",
+      start: "top 80%",  // cuando el top del elemento toque el 80% de la ventana
+      toggleActions: "play none none none", // solo reproduce al entrar
+    },
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power3.out"
+  });
 });
 
 import SplitType from 'split-type';

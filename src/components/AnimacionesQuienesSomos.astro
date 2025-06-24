@@ -2,6 +2,8 @@
   import { gsap } from "gsap";
   import Swiper from "swiper";
   import { Navigation } from "swiper/modules";
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
 
   const cards = document.querySelectorAll<HTMLElement>(".card");
 
@@ -71,4 +73,20 @@
       prevEl: ".swiper-button-prev",
     },
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  gsap.from(".resumen-slide", {
+    scrollTrigger: {
+      trigger: ".resumen-slide",
+      start: "top 80%",  // cuando el top del elemento toque el 80% de la ventana
+      toggleActions: "play none none none", // solo reproduce al entrar
+    },
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power3.out"
+  });
+});
+
 </script>

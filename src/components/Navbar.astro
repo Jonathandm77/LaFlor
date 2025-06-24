@@ -5,17 +5,35 @@
       <div class="flex items-center justify-between w-full lg:w-auto">
         <!-- Botón hamburguesa, solo móvil -->
         <div class="lg:hidden">
-          <button type="button" id="menu-button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+          <button
+            type="button"
+            id="menu-button"
+            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
             <span class="sr-only">Open main menu</span>
-            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <svg
+              id="menu-icon"
+              class="h-6 w-6 transform transition-transform duration-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
             </svg>
           </button>
         </div>
 
         <!-- Logo centrado en móvil, izquierda en lg -->
         <div class="flex-1 flex justify-center lg:justify-start">
-          <a href="/" class="text-5xl italic text-gray-300 font-diamond">Autoescuela La Flor</a>
+          <a href="/" class="text-5xl italic text-gray-300 font-diamond"
+            >Autoescuela La Flor</a
+          >
         </div>
 
         <!-- Espacio invisible para compensar ancho botón, solo móvil -->
@@ -24,21 +42,54 @@
 
       <!-- Menú de links, oculto en móvil, visible en lg, alineado a la izquierda -->
       <div class="hidden lg:flex lg:ml-6 lg:space-x-4">
-        <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Inicio</a>
-        <a href="/QuienesSomos" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Quiénes Somos</a>
-        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cursos</a>
-        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+        <a
+          href="/"
+          class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+          aria-current="page">Inicio</a
+        >
+        <a
+          href="/QuienesSomos"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Quiénes Somos</a
+        >
+        <a
+          href="#"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Cursos</a
+        >
+        <a
+          href="#"
+          class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Contacto</a
+        >
       </div>
     </div>
   </div>
 
   <!-- Menú móvil -->
-  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-700 ease-in-out">
+
     <div class="space-y-1 px-2 pt-2 pb-3">
-      <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Inicio</a>
-      <a href="/QuienesSomos" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Quiénes Somos</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cursos</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+      <a
+        href="/"
+        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+        aria-current="page">Inicio</a
+      >
+      <a
+        href="/QuienesSomos"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+        >Quiénes Somos</a
+      >
+      <a
+        href="#"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+        >Cursos</a
+      >
+      <a
+        href="#"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+        >Contacto</a
+      >
     </div>
   </div>
 </nav>
@@ -46,25 +97,33 @@
 <script>
   const button = document.getElementById('menu-button');
   const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
 
   let isOpen = false;
 
-  if (button && menu) {
+  if (button && menu && icon) {
     button.addEventListener('click', () => {
       if (isOpen) {
         menu.classList.remove('max-h-96', 'opacity-100');
         menu.classList.add('max-h-0', 'opacity-0');
+
+        icon.classList.remove('rotate-90');
         button.setAttribute('aria-expanded', "false");
       } else {
         menu.classList.remove('max-h-0', 'opacity-0');
         menu.classList.add('max-h-96', 'opacity-100');
+
+        icon.classList.add('rotate-90');
         button.setAttribute('aria-expanded', "true");
       }
+
       isOpen = !isOpen;
     });
 
-    // Inicializar cerrado
+    // Estado inicial
     menu.classList.add('max-h-0', 'opacity-0');
+    icon.classList.remove('rotate-90');
     button.setAttribute('aria-expanded', "false");
   }
 </script>
+

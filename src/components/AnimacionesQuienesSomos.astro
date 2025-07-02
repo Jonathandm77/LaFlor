@@ -105,7 +105,7 @@ import SplitType from 'split-type';
 
 document.querySelectorAll('.card-text').forEach(card => {
   // Divide el texto en líneas
-  const split = new SplitType(card as HTMLElement, { types: 'lines', lineClass: 'line' });
+  const split = new SplitType(card as HTMLElement, { types: 'lines', lineClass: 'line', tagName: 'span' });
 
   gsap.from(split.lines, {
     scrollTrigger: {

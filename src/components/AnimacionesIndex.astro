@@ -5,7 +5,7 @@
 
 // Animar .escaparate-slide de derecha hacia izquierda
   gsap.utils.toArray('.escaparate-slide').forEach(elem => {
-    gsap.from('.escaparate-slide', {
+    gsap.from(elem as HTMLElement, {
       x: 100, 
       opacity: 0,
       duration: 1,
@@ -20,10 +20,10 @@
 
   // Animar .aula-slide de izquierda a derecha
   gsap.utils.toArray('.aula-slide').forEach(elem => {
-    gsap.from('.aula-slide', {
+    gsap.from(elem as HTMLElement, {
       x: -100, 
       opacity: 0,
-      duration: 1,
+      duration: 1,  
       ease: "power2.out",
       scrollTrigger: {
         trigger: '.aula-slide',
@@ -34,7 +34,7 @@
   });
   // Animar .vehiculos-slide de derecha a izquierda
   gsap.utils.toArray('.vehiculos-slide').forEach(elem => {
-    gsap.from('.vehiculos-slide', {
+    gsap.from(elem as HTMLElement, {
       x: 100, 
       opacity: 0,
       duration: 1,

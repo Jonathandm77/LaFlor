@@ -1,0 +1,66 @@
+---
+const cursos = [
+ {
+     id: 'A2',
+     nombre: 'Permiso A2',
+     descripcion: 'Para motos de hasta 35 kW. Se necesita una edad mínima de 18 años. Tiene dos exámenes teóricos: uno de conocimientos generales (no es necesario si ya tienes el del permiso B) y otro específico de motocicletas. Permite además el uso de sidecar.',
+     imagen: '/images/A2.webp',
+     enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/clases-de-permisos-de-conducir/#64519cfe-8541-11ea-bb32-005056a48f82-00213__1_',
+ },
+ {
+     id: 'A1',
+     nombre: 'Permiso A1',
+     descripcion: 'Para motos de hasta 11 kW y 125cc y triciclos de motor que no excedan de 15 kW de potencia. Al igual que en el permiso A2, habrá 2 exámenes teóricos. Se puede obtener desde los 16 años.',
+     imagen: '/images/A1.webp',
+     enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/clases-de-permisos-de-conducir/#64519cfe-8541-11ea-bb32-005056a48f82-00213__1_',
+ },
+ {
+ id: 'A',
+ nombre: 'Permiso A',
+ descripcion: 'Conduce cualquier tipo de motocicleta sin limitaciones. Para obtener este permiso se requiere tener 2 años de antigüedad del permiso A2 y una edad mínima de 20 años. Incluye las motos de la categoría A1.',
+ imagen: '/images/A.webp',
+ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/clases-de-permisos-de-conducir/#64519cfe-8541-11ea-bb32-005056a48f82-00213__1_',
+ },
+ {
+ id: 'B',
+ nombre: 'Permiso B',
+ descripcion: 'El permiso clásico para coches. Permite conducir vehículos de como máximo 3.500 kg y hasta 9 plazas, incluyendo al conductor. También permite conducir remolques ligeros.',
+ imagen: '/images/B.webp',
+ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/clases-de-permisos-de-conducir/#64519cfe-8541-11ea-bb32-005056a48f82-00214__1_',
+ },
+{
+id: 'B96',
+nombre: 'Permiso B96',
+descripcion: 'Permiso que autoriza a conducir vehículos de la categoría B con un remolque cuya masa máxima autorizada supere los 750 kg, y el conjunto tenga una masa máxima autorizada de entre 3.500 kg y 4.250 kg.',
+imagen: '/images/B96.webp',
+enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-conjunto-3.500/'
+},
+];
+---
+<section class="bg-gradient-to-b from-blue-50 to-white py-20 px-6 sm:px-10">
+  <h2 class="text-4xl font-extrabold text-center text-blue-900 mb-16">Explora Nuestros Cursos</h2>
+
+  <div class="space-y-20 max-w-5xl mx-auto">
+    {cursos.map((curso, idx) => (
+      <div class={`flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+        <!-- Imagen -->
+        <div class="w-full lg:w-1/2 relative">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl shadow-2xl ring-1 ring-blue-100">
+            <img src={curso.imagen} alt={`Imagen del curso ${curso.nombre}`} class="object-cover w-full h-full" loading="lazy" />
+          </div>
+          <!-- Círculo decorativo -->
+          <div class="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 -z-10"></div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="w-full lg:w-1/2 space-y-4">
+          <h3 class="text-3xl font-bold text-blue-800">{curso.nombre}</h3>
+          <p class="text-lg text-gray-700 leading-relaxed">{curso.descripcion}</p>
+          <a target="_blank" href={curso.enlace} class="inline-block mt-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 rounded-full shadow hover:scale-105 transition">
+            Más información
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

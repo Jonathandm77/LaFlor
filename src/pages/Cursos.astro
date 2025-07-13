@@ -3,9 +3,10 @@ import "../styles/tailwind.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ListaCursos from "../components/ListaCursos.astro";
+import AnimacionesCursos from "../components/AnimacionesCursos.astro";
 ---
 
-<html lang="es">
+<html class="overflow-x-hidden" lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,9 +16,10 @@ import ListaCursos from "../components/ListaCursos.astro";
     />
     <title>Autoescuela La Flor</title>
   </head>
-  <body class="pt-16 bg-gray-100">
+  <body class="pt-16 bg-gray-100 overflow-x-hidden">
     <Navbar />
     <ListaCursos />
     <Footer />
+    <AnimacionesCursos />
   </body>
 </html>

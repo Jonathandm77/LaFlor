@@ -24,14 +24,14 @@ const cursos = [
  {
  id: 'B',
  nombre: 'Permiso B',
- descripcion: 'El permiso clásico para coches. Permite conducir vehículos de como máximo 3.500 kg y hasta 9 plazas, incluyendo al conductor. También permite conducir remolques ligeros.',
+ descripcion: 'El permiso clásico para coches. Permite conducir vehículos de como máximo 3.500 kg y hasta 9 plazas, incluyendo al conductor. También permite conducir remolques ligeros. La edad mínima para obtenerlo es de 18 años. Incluye la conducción de vehículos de la categoría AM.',
  imagen: '/images/B.webp',
  enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/clases-de-permisos-de-conducir/#64519cfe-8541-11ea-bb32-005056a48f82-00214__1_',
  },
 {
 id: 'B96',
 nombre: 'Permiso B96',
-descripcion: 'Permiso que autoriza a conducir vehículos de la categoría B con un remolque cuya masa máxima autorizada supere los 750 kg, y el conjunto tenga una masa máxima autorizada de entre 3.500 kg y 4.250 kg.',
+descripcion: 'Permiso que autoriza a conducir vehículos de la categoría B con un remolque cuya masa máxima autorizada supere los 750 kg, y el conjunto tenga una masa máxima autorizada de entre 3.500 kg y 4.250 kg. Se puede obtener a partir de los 18 años.',
 imagen: '/images/B96.webp',
 enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-conjunto-3.500/'
 },
@@ -42,7 +42,7 @@ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-
 
   <div class="space-y-20 max-w-5xl mx-auto">
     {cursos.map((curso, idx) => (
-      <div class={`flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+      <div class={`curso flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
         <!-- Imagen -->
         <div class="w-full lg:w-1/2 relative">
           <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl shadow-2xl">

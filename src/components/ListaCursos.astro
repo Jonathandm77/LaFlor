@@ -37,7 +37,7 @@ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-
 },
 ];
 ---
-<section class="bg-gradient-to-b from-blue-50 to-white py-20 px-6 sm:px-10">
+<section class="bg-white py-20 px-6 sm:px-10">
   <h2 class="text-4xl font-extrabold text-center text-blue-900 mb-16">Explora Nuestros Cursos</h2>
 
   <div class="space-y-20 max-w-5xl mx-auto">
@@ -45,7 +45,7 @@ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-
       <div class={`flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
         <!-- Imagen -->
         <div class="w-full lg:w-1/2 relative">
-          <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl shadow-2xl ring-1 ring-blue-100">
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl shadow-2xl">
             <img src={curso.imagen} alt={`Imagen del curso ${curso.nombre}`} class="object-cover w-full h-full" loading="lazy" />
           </div>
           <!-- Círculo decorativo -->

@@ -40,6 +40,10 @@
   color: #ACD14E;
 }
 
+.verdeCurso{
+  color: #acd14ed8;
+}
+
 @layer utilities {
       /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {

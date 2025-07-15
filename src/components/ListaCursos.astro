@@ -37,26 +37,26 @@ enlace: 'https://www.dgt.es/nuestros-servicios/permisos-de-conducir/maniobras-b-
 },
 ];
 ---
-<section class="bg-white py-20 px-6 sm:px-10">
-  <h2 class="text-4xl font-extrabold text-center text-blue-900 mb-16">Explora Nuestros Cursos</h2>
+<section class="fondoCont py-20 px-6 sm:px-10">
+  <h2 class="text-4xl font-extrabold text-center textoTitulo mb-16">Explora Nuestros Cursos</h2>
 
-  <div class="space-y-20 max-w-5xl mx-auto">
+<div class="flex flex-col gap-5 md:gap-20 max-w-5xl mx-auto">
     {cursos.map((curso, idx) => (
-      <div class={`curso flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+      <div class={`curso fondoTarj p-5 rounded-2xl flex flex-col lg:flex-row items-center gap-8 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
         <!-- Imagen -->
         <div class="w-full lg:w-1/2 relative">
           <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl shadow-2xl">
             <img src={curso.imagen} alt={`Imagen del curso ${curso.nombre}`} class="object-cover w-full h-full" loading="lazy" />
           </div>
           <!-- Círculo decorativo -->
-          <div class="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 -z-10"></div>
+          <div class="absolute -top-6 -left-6 w-20 h-20 rounded-full blur-2xl opacity-30 -z-10"></div>
         </div>
 
         <!-- Contenido -->
         <div class="w-full lg:w-1/2 space-y-4">
-          <h3 class="text-3xl font-bold text-blue-800">{curso.nombre}</h3>
-          <p class="text-lg text-gray-700 leading-relaxed">{curso.descripcion}</p>
-          <a target="_blank" href={curso.enlace} class="inline-block mt-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 rounded-full shadow hover:scale-105 transition">
+          <h3 class="text-3xl font-bold textoTitulo">{curso.nombre}</h3>
+          <p class="text-lg textoSubtitulo leading-relaxed">{curso.descripcion}</p>
+          <a target="_blank" href={curso.enlace} class="inline-block mt-4 text-sm font-semibold text-white bColor px-6 py-2 rounded-full shadow hover:scale-102 transition hover:bg-[#5d743d]!">
             Más información
           </a>
         </div>

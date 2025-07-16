@@ -35,6 +35,9 @@
 .bColor{
   background-color: #73904B;
 }
+.bColor:hover{
+  background-color: #5d743d!important;
+}
 
 .verdeMarca{
   color: #ACD14E;

@@ -7,6 +7,10 @@
     document.getElementById("cerrar-modal-contacto2"),
   ];
 
+  const button = document.getElementById('menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
   let modalAbierto = false;
 
   function abrirModal() {
@@ -24,12 +28,29 @@
       modalContent.classList.add("translate-y-0", "opacity-100");
 
       modalAbierto = true;
+      if (menu) {
+        menu.classList.remove('max-h-96', 'opacity-100');
+        menu.classList.add('max-h-0', 'opacity-0');
+      }
+
+        if (icon) {
+          icon.classList.remove('rotate-90');
+        }
+        if (button) {
+          button.setAttribute('aria-expanded', 'false');
+          //wait 0.2 seconds before removing the background color
+          setTimeout(() => {
+            button.classList.remove('bg-gray-900');
+          }, 200);
+          //add transition to the button background color
+          button.classList.add('transition-colors', 'duration-700');
+        }
     } else {
       cerrarModal();
     }
   }
 
-  function cerrarModal() {
+  export function cerrarModal() {
     if (modal && modalContent) {
       modal.classList.remove("opacity-100");
       modal.classList.add("opacity-0");

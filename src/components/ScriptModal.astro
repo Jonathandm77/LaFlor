@@ -1,4 +1,10 @@
 <script>
+  declare global {
+  interface Window {
+    cerrarModal?: () => void;
+  }
+}
+
   const contactoEnlaces = document.querySelectorAll('a[href="#contacto"]');
   const modal = document.getElementById("modal-contacto");
   const modalContent = modal ? modal.querySelector(".modal-content") : null;
@@ -65,6 +71,8 @@
       }, 300);
     }
   }
+
+  window.cerrarModal = cerrarModal;
 
   contactoEnlaces.forEach((el) =>
     el.addEventListener("click", (e) => {
